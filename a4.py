@@ -1,7 +1,12 @@
 #Name: Itai Lavie
 #Email: itai.lavie47@myhunter.cuny.edu
-#Date: February 10, 2024
-#This program completes assignment 4
+#Date: February 20, 2024
+#This program completes assignment 5
 
-for _ in range(25):
-    print("I love Python!")
+import turtle
+wn = turtle.Screen()
+star = turtle.Turtle()
+
+for i in range(5):
+    star.forward(100)  
+    star.right(144)    
