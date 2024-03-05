@@ -1,12 +1,14 @@
 #Name: Itai Lavie
 #Email: itai.lavie47@myhunter.cuny.edu
-#Date: February 20, 2024
-#This program completes assignment 5
+#Date: March 5, 2024
+#This program completes assignment 12
 
 import turtle
-wn = turtle.Screen()
-star = turtle.Turtle()
 
-for i in range(5):
-    star.forward(100)  
-    star.right(144)    
+hex_color = input("Enter a hex string: ")
+wn = turtle.Screen()
+wn.bgcolor("lightgreen")
+tess = turtle.Turtle()
+tess.color(hex_color)
+tess.shape("turtle")
+turtle.done()
