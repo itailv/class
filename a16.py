@@ -1,15 +1,10 @@
 #Name: Itai Lavie
 #Email: itai.lavie47@myhunter.cuny.edu
-#Date: March 5, 2024
-#This program completes assignment 16
+#Date: March 13, 2024
+#This program completes assignment 18
 
-s = input("Enter string: ")
-ls = len(s)
-
-for i in range(ls+1):
-    print(s[:i])
-
-for i in range(ls):
-    print(s[i:])
-
-print("Thank you for using my program!")
+hours = int(input("Enter number of hours: "))
+days = hours // 24
+leftover = hours % 24
+print("Days:", days)
+print("Hours:", leftover)
