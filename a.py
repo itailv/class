@@ -1,19 +1,31 @@
 #Name: Itai Lavie
 #Email: itai.lavie47@myhunter.cuny.edu
 #Date: March 24, 2024
-#This program completes assignment 34
+#This program completes assignment 35
+
+import pandas as pd
 
 def main():
-    # Ask the user for the hour of the day in 24-hour format
-    hour = int(input("Enter hour (in 24 hour time): "))
+    # Ask the user for the input file name and the attribute to search by
+    file_name = input("Enter file name: ")
+    attribute = input("Enter attribute: ")
     
-    # Determine and print the appropriate greeting based on the hour
-    if hour < 12:
-        print("Good Morning")
-    elif hour < 17:  # This implicitly means hour is 12 or greater but strictly less than 17
-        print("Good Afternoon")
-    else:
-        print("Good Evening")
+    # Read the data from the input CSV file
+    data = pd.read_csv(file_name)
+    
+    # Check if the attribute exists in the dataframe
+    if attribute not in data.columns:
+        print(f"Attribute '{attribute}' not found in the data.")
+        return
+    
+    # Count the occurrences of each unique value in the specified attribute column
+    # and sort them to find the 10 worst offenders
+    offender_counts = data[attribute].value_counts().head(10)
+    
+    # Print the results
+    print("The 10 worst offenders are:\n")
+    print(attribute)
+    print(offender_counts)
 
 if __name__ == "__main__":
     main()
