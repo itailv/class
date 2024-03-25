@@ -1,23 +1,19 @@
 #Name: Itai Lavie
 #Email: itai.lavie47@myhunter.cuny.edu
 #Date: March 24, 2024
-#This program completes assignment 33
+#This program completes assignment 34
 
 def main():
-    # Prompt the user to enter a list of names
-    names_string = input("Please enter your list of names: ")
+    # Ask the user for the hour of the day in 24-hour format
+    hour = int(input("Enter hour (in 24 hour time): "))
     
-    # Split the input string into individual names
-    names_list = names_string.split('; ')
-    
-    print("\nYou entered:\n")
-    
-    # Process and print each name in the desired format
-    for name in names_list:
-        last_name, first_name = name.split(', ')
-        print(f"{first_name} {last_name}")
-    
-    print("\nThank you for using my name organizer!")
+    # Determine and print the appropriate greeting based on the hour
+    if hour < 12:
+        print("Good Morning")
+    elif hour < 17:  # This implicitly means hour is 12 or greater but strictly less than 17
+        print("Good Afternoon")
+    else:
+        print("Good Evening")
 
 if __name__ == "__main__":
     main()
