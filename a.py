@@ -1,28 +1,23 @@
 #Name: Itai Lavie
 #Email: itai.lavie47@myhunter.cuny.edu
 #Date: March 24, 2024
-#This program completes assignment 32
-
-from PIL import Image
+#This program completes assignment 33
 
 def main():
-    # Ask the user for the input and output file names
-    input_image_name = input("Enter image file name: ")
-    output_image_name = input("Enter output file: ")
+    # Prompt the user to enter a list of names
+    names_string = input("Please enter your list of names: ")
     
-    # Open the input image
-    with Image.open(input_image_name) as img:
-        # Calculate the dimensions for the lower left quarter
-        width, height = img.size
-        new_width = width // 2
-        new_height = height // 2
-        
-        # Crop the image to the lower left quarter
-        # The box is defined by (left, upper, right, lower)
-        cropped_img = img.crop((0, new_height, new_width, height))
-        
-        # Save the cropped image to the output file
-        cropped_img.save(output_image_name)
+    # Split the input string into individual names
+    names_list = names_string.split('; ')
+    
+    print("\nYou entered:\n")
+    
+    # Process and print each name in the desired format
+    for name in names_list:
+        last_name, first_name = name.split(', ')
+        print(f"{first_name} {last_name}")
+    
+    print("\nThank you for using my name organizer!")
 
 if __name__ == "__main__":
     main()
