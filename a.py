@@ -13,7 +13,7 @@ def main():
     # Read the data from the input CSV file
     data = pd.read_csv(file_name)
     
-    # Check if the attribute exists in the dataframe
+    # Validate if the attribute exists in the dataframe
     if attribute not in data.columns:
         print(f"Attribute '{attribute}' not found in the data.")
         return
@@ -24,7 +24,6 @@ def main():
     
     # Print the results
     print("The 10 worst offenders are:\n")
-    print(attribute)
     print(offender_counts)
 
 if __name__ == "__main__":
